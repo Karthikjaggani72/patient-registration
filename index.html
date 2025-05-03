@@ -95,11 +95,16 @@
 <!-- Sections -->
 <div id="registration" class="section active">
   <h2>Patient Registration</h2>
-  <form>
+    <label>MR NO:</label><input type="number" required>
     <label>Full Name:</label><input type="text" required>
     <label>Age:</label><input type="number" required>
     <label>Gender:</label>
     <select required><option>Male</option><option>Female</option><option>Other</option></select>
+    <label>Relation:</label>
+    <select required><option>self</option><option>Relation</option><option>Father</option>
+    </option><option>Mother</option><option>Brother/Sister</option>
+    </option><option>Friend</option><option>Other</option></select>
+    <label>Relative Name:</label><input type="tel" >
     <label>Phone:</label><input type="tel" required>
     <label>Aadhar Number:</label><input type="text" maxlength="12" required>
     <label>Address:</label><input type="text" required>
@@ -111,32 +116,269 @@
     <select><option>New</option><option>Old</option></select>
     <label>Doctor to Visit:</label><input type="text" required>
     <button class="submit-btn" type="submit">Register</button>
-  </form>
 </div>
 
 <div id="opbilling" class="section">
   <h2>OP Billing Section</h2>
-  <p>Here you can implement OP billing form or records.</p>
+  <form>
+      <label>Billing Date:</label>
+      <input type="date" required>
+
+      <label>Patient ID:</label>
+      <input type="text" required>
+
+      <label>Patient Name:</label>
+      <input type="text" required>
+
+      <label>Consulting Doctor:</label>
+      <input type="text" required>
+
+      <label>Department:</label>
+      <input type="text" required>
+
+      <label>Visit Type:</label>
+      <select required>
+        <option>First Visit</option>
+        <option>Follow-up</option>
+      </select>
+
+      <label>Consultation Fee:</label>
+      <input type="number" step="0.01" required>
+
+      <label>Lab Charges:</label>
+      <input type="number" step="0.01">
+
+      <label>Scan/Imaging Charges:</label>
+      <input type="number" step="0.01">
+
+      <label>Other Services (e.g., Procedures):</label>
+      <textarea></textarea>
+
+      <label>Other Charges:</label>
+      <input type="number" step="0.01">
+
+      <label>Total Amount:</label>
+      <input type="number" step="0.01" required>
+
+      <label>Payment Mode:</label>
+      <select required>
+        <option>Cash</option>
+        <option>Credit Card</option>
+        <option>Debit Card</option>
+        <option>UPI</option>
+        <option>Insurance</option>
+      </select>
+
+      <label>Billing Remarks:</label>
+      <textarea></textarea>
+
+      <button type="submit">Generate Bill</button>
+    </form>
 </div>
 
 <div id="pharmacy" class="section">
   <h2>Pharmacy Section</h2>
-  <p>Pharmacy sales or stock management form can go here.</p>
+  <form>
+    <label>Sale Date:</label>
+    <input type="date" required>
+
+    <label>Patient ID (or Visitor):</label>
+    <input type="text" required>
+
+    <label>Patient/Customer Name:</label>
+    <input type="text" required>
+
+    <label>Doctor Name:</label>
+    <input type="text">
+
+    <label>Prescription Reference No:</label>
+    <input type="text">
+
+    <label>Payment Type:</label>
+    <select required>
+      <option>Cash</option>
+      <option>Card</option>
+      <option>UPI</option>
+      <option>Insurance</option>
+    </select>
+
+    <div class="medicines">
+      <h3>Medicines Issued</h3>
+
+      <div class="medicine-group">
+        <label>Medicine Name:</label>
+        <input type="text" required>
+
+        <label>Batch No:</label>
+        <input type="text">
+
+        <label>Expiry Date:</label>
+        <input type="date">
+
+        <label>Quantity:</label>
+        <input type="number" min="1" required>
+
+        <label>MRP (per unit):</label>
+        <input type="number" step="0.01" required>
+
+        <label>Total Price:</label>
+        <input type="number" step="0.01" required>
+      </div>
+
+      <!-- You can repeat medicine-group for more entries dynamically using JS -->
+    </div>
+
+    <label>Total Amount:</label>
+    <input type="number" step="0.01" required>
+
+    <label>Discount:</label>
+    <input type="number" step="0.01">
+
+    <label>Net Amount Paid:</label>
+    <input type="number" step="0.01" required>
+
+    <label>Remarks:</label>
+    <textarea></textarea>
+
+    <button type="submit">Submit Sale</button>
+  </form>
 </div>
 
 <div id="ip" class="section">
   <h2>IP (In-Patient) Section</h2>
-  <p>Admit patient form, ward assignment, etc.</p>
+  <p><form>
+    <label>Admission Date & Time:</label>
+    <input type="datetime-local" required>
+
+    <label>Patient ID:</label>
+    <input type="text" required>
+
+    <label>Full Name:</label>
+    <input type="text" required>
+
+    <label>Gender:</label>
+    <select required>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </select>
+
+    <label>Age:</label>
+    <input type="number" min="0" required>
+
+    <label>Contact Number:</label>
+    <input type="tel" required>
+
+    <label>Admission Reason / Diagnosis:</label>
+    <textarea required></textarea>
+
+    <label>Doctor Assigned:</label>
+    <input type="text" required>
+
+    <label>Ward Type:</label>
+    <select required>
+      <option>General Ward</option>
+      <option>Semi Private</option>
+      <option>Private</option>
+      <option>ICU</option>
+    </select>
+
+    <label>Room No / Bed No:</label>
+    <input type="text" required>
+
+    <label>Insurance Provider (if any):</label>
+    <input type="text">
+
+    <label>Policy Number:</label>
+    <input type="text">
+
+    <label>Emergency Contact Person:</label>
+    <input type="text" required>
+
+    <label>Emergency Contact Number:</label>
+    <input type="tel" required>
+
+    <label>Remarks:</label>
+    <textarea></textarea>
+
+    <button type="submit">Admit Patient</button>
+  </form></p>
 </div>
 
 <div id="ipbilling" class="section">
   <h2>IP Billing Section</h2>
-  <p>Handle inpatient billing, discharge billing, etc.</p>
+  <form>
+      <label>Billing Date:</label>
+      <input type="date" required>
+
+      <label>Patient ID:</label>
+      <input type="text" required>
+
+      <label>Patient Name:</label>
+      <input type="text" required>
+
+      <label>Consulting Doctor:</label>
+      <input type="text" required>
+
+      <label>Department:</label>
+      <input type="text" required>
+
+      <label>Visit Type:</label>
+      <select required>
+        <option>First Visit</option>
+        <option>Follow-up</option>
+      </select>
+
+      <label>Consultation Fee:</label>
+      <input type="number" step="0.01" required>
+
+      <label>Lab Charges:</label>
+      <input type="number" step="0.01">
+
+      <label>Scan/Imaging Charges:</label>
+      <input type="number" step="0.01">
+
+      <label>Other Services (e.g., Procedures):</label>
+      <textarea></textarea>
+
+      <label>Other Charges:</label>
+      <input type="number" step="0.01">
+
+      <label>Total Amount:</label>
+      <input type="number" step="0.01" required>
+
+      <label>Payment Mode:</label>
+      <select required>
+        <option>Cash</option>
+        <option>Credit Card</option>
+        <option>Debit Card</option>
+        <option>UPI</option>
+        <option>Insurance</option>
+      </select>
+
+      <label>Billing Remarks:</label>
+      <textarea></textarea>
+
+      <button type="submit">Generate Bill</button>
+    </form>
 </div>
 
 <div id="masterforms" class="section">
   <h2>Master Forms</h2>
-  <p>Add new doctors, departments, wards, etc.</p>
+  <p><label>Medicine Name:</label>
+      <input type="text" required>
+
+      <label>Batch NO:</label>
+      <input type="text" required>
+
+      <label>Expiry Date:</label>
+      <input type="date" required>
+
+      <label>MRP:</label>
+      <input type="number" required>
+      
+      <label>Sale Amt:</label>
+      <input type="number" required></p>
 </div>
 
 <script>
