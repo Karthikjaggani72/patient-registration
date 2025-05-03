@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pharmacy Billing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #e3f2fd;
+      padding: 20px;
+    }
+    .container {
+      max-width: 850px;
+      background: #fff;
+      margin: auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .medicines {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background: #f9f9f9;
+    }
+    .medicine-group {
+      margin-bottom: 15px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      width: 100%;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    a.back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #007BFF;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>Pharmacy Sales Form</h2>
+  <form>
+    <label>Sale Date:</label>
+    <input type="date" required>
+
+    <label>Patient ID (or Visitor):</label>
+    <input type="text" required>
+
+    <label>Patient/Customer Name:</label>
+    <input type="text" required>
+
+    <label>Doctor Name:</label>
+    <input type="text">
+
+    <label>Prescription Reference No:</label>
+    <input type="text">
+
+    <label>Payment Type:</label>
+    <select required>
+      <option>Cash</option>
+      <option>Card</option>
+      <option>UPI</option>
+      <option>Insurance</option>
+    </select>
+
+    <div class="medicines">
+      <h3>Medicines Issued</h3>
+
+      <div class="medicine-group">
+        <label>Medicine Name:</label>
+        <input type="text" required>
+
+        <label>Batch No:</label>
+        <input type="text">
+
+        <label>Expiry Date:</label>
+        <input type="date">
+
+        <label>Quantity:</label>
+        <input type="number" min="1" required>
+
+        <label>MRP (per unit):</label>
+        <input type="number" step="0.01" required>
+
+        <label>Total Price:</label>
+        <input type="number" step="0.01" required>
+      </div>
+
+      <!-- You can repeat medicine-group for more entries dynamically using JS -->
+    </div>
+
+    <label>Total Amount:</label>
+    <input type="number" step="0.01" required>
+
+    <label>Discount:</label>
+    <input type="number" step="0.01">
+
+    <label>Net Amount Paid:</label>
+    <input type="number" step="0.01" required>
+
+    <label>Remarks:</label>
+    <textarea></textarea>
+
+    <button type="submit">Submit Sale</button>
+  </form>
+  <a class="back-link" href="index.html">&larr; Back to Dashboard</a>
+</div>
+</body>
+</html>
